@@ -1,0 +1,96 @@
+#coupons_list{
+    float: left;
+    width: 48%;
+
+    .item_coupon{
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 120px;
+        margin-bottom: 20px;
+        box-shadow:1px 1px 4px  rgba(0,0,0,0.5);
+        -moz-box-shadow:1px 1px 4px  rgba(0,0,0,0.5);
+        -webkit-box-shadow:1px 1px 4px  rgba(0,0,0,0.5);
+
+        &.active{
+            background: linear-gradient(to right, #ffb300 0%, #ffb300 35%, #eeeeee 35%, #eeeeee 100%);
+        }
+
+        &.used{
+            background: linear-gradient(to right, #ffb300 0%, #ffb300 35%, #eeeeee 35%, #eeeeee 100%);
+            filter: grayscale(0.6);
+        }
+
+        &.disabled{
+            background-color: #f2f2f2;
+        }
+
+        &:before{
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            left: calc( 35% - 3px );
+            width: 3px;
+            height: 100%;
+            border-left: 3px dashed #fff;
+        }
+
+        .code{
+            box-sizing: border-box;
+            width: 35%;
+            text-align: center;
+            font-size: 1.625rem;
+            font-weight: 600;
+
+            i{
+                display: block;
+                text-align: center;
+                font-size: 0.875rem;
+            }
+        }
+
+        .note{
+            box-sizing: border-box;
+            font-size: 1rem;
+            color: #333333;
+            width: 65%;
+            height: 100%;
+            padding: 15px;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            small{
+                font-size: 0.8rem;
+            }
+        }
+
+        .btn_coupon{
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-align: center;
+            border: 1px solid #ffb300;
+            color: #ffb300;
+            padding: 2px 10px;
+            margin-left: auto;
+            margin-top: auto;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover, &:focus{
+                background-color: #ffb300;
+                color: #ffffff;
+            }
+        }
+
+        .btn_coupon[disabled], .btn_coupon[disabled]:hover{
+            border:1px solid #bbbbbb;
+            color: #bbbbbb;
+            background-color: transparent;
+            cursor: not-allowed;
+        }
+
+    }
+}

@@ -1,2 +1,8 @@
-# sig-wc-show-coupon
- 
+# Woocommerce 購物車顯示可用折價券
+
+## 用途
+* 在結帳畫面中顯示可用的折價券清單
+* 可直接點選折價券來使用
+
+## 使用方法
+下載後，上傳到 wp-content/plugins 資料夾下
