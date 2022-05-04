@@ -33,7 +33,7 @@ if ( ! class_exists( 'Sig_Wc_Show_Coupon' ) ) :
 
 
         public static function use_plugin_style() {
-            wp_enqueue_style( 'sig-wc-show-coupon', plugin_dir_url( __FILE__ ) . '/css/style.css', [], SIG_SWSC_VERSION );
+            wp_enqueue_style( 'sig-wc-show-coupon', plugin_dir_url( __FILE__ ) . 'css/style.css', [], SIG_SWSC_VERSION );
         }
 
         public static function footer_html() {
@@ -92,12 +92,12 @@ if ( ! class_exists( 'Sig_Wc_Show_Coupon' ) ) :
                 $btn_name = '';
 
                 $minimum_amount = (empty($c->get_minimum_amount())) ? 0: $c->get_minimum_amount();
-                if( $minimum_amount > 0 ) $amount[] = '滿 '. $minimum_amount;
+                if( $minimum_amount > 0 ) $amount[] = '滿 '. wc_price($minimum_amount);
 
                 if( $c->get_discount_type() == 'fixed_cart' ){
-                    $amount[] = '折 ' . $c->get_amount() ;
+                    $amount[] = '折 ' . wc_price($c->get_amount()) ;
                 }else if( $c->get_discount_type() == 'fixed_product' ){
-                    $amount[] = '折 ' . $c->get_amount() ;
+                    $amount[] = '特價品折 ' . wc_price($c->get_amount()) ;
                 }else if( $c->get_discount_type() == 'percent' ){
                     $amount[] = '打 ' . (100 - $c->get_amount()) .' 折' ;
                 }
